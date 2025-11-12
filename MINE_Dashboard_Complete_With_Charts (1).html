@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINE Monthly Report - October 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo-separator {
+            font-size: 30px;
+            color: #5dade2;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #5dade2;
+            margin-bottom: 20px;
+        }
+
+        .contact-bar {
+            background: #1a252f;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-item {
+            color: #ecf0f1;
+            font-size: 14px;
+        }
+
+        .contact-label {
+            color: #95a5a6;
+            margin-right: 5px;
+        }
+
+        .dashboard {
+            padding: 40px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .metric-card:nth-child(2) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .metric-card:nth-child(3) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .metric-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #5dade2;
+        }
+
+        .takeaways {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .takeaway-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 4px solid #5dade2;
+        }
+
+        .takeaway-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .savings-highlight {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .savings-value {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .savings-label {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+
+        .time-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: #34495e;
+            color: white;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .improvement-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .improvement-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-left: 5px solid #5dade2;
+        }
+
+        .improvement-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .improvement-stat {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 5px;
+        }
+
+        .improvement-desc {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard {
+                padding: 20px;
+            }
+            
+            .metric-value {
+                font-size: 28px;
+            }
+            
+            .savings-value {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logos">
+                <div class="logo">MINE</div>
+                <div class="logo-separator">|</div>
+                <div class="logo">cake freight</div>
+            </div>
+            <h1>MINE Monthly Report</h1>
+            <div class="subtitle">October 2025</div>
+        </div>
+
+        <div class="contact-bar">
+            <div class="contact-item">
+                <span class="contact-label">Contact:</span>
+                <strong>Samantha Weiss</strong>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Email:</span>
+                <strong>mine@cakefreight.com</strong>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Phone:</span>
+                <strong>(877) 845-CAKE</strong>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="section">
+                <div class="section-title">Monthly Overview</div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Total Freight Spend</div>
+                        <div class="metric-value">$53,590.60</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Total Shipments</div>
+                        <div class="metric-value">113</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Shipping Mode</div>
+                        <div class="metric-value">LTL</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="savings-highlight">
+                <div class="savings-value">864.5</div>
+                <div class="savings-label">Total Hours Saved This Month</div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Key Performance Improvements</div>
+                <div class="improvement-cards">
+                    <div class="improvement-card">
+                        <div class="improvement-title">Pickup Lead Time Reduction</div>
+                        <div class="improvement-stat">85%</div>
+                        <div class="improvement-desc">Faster speed from booking to pickup</div>
+                        <p style="margin-top: 15px; color: #555;">Lead time decreased from <strong>14 days to 2 days</strong> on average with our new program</p>
+                    </div>
+                    <div class="improvement-card">
+                        <div class="improvement-title">Transit Time Improvement</div>
+                        <div class="improvement-stat">50%</div>
+                        <div class="improvement-desc">Decrease in shipment days in transit</div>
+                        <p style="margin-top: 15px; color: #555;">Compared to Mine's previous carrier network</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Key Takeaways</div>
+                <div class="takeaways">
+                    <div class="takeaway-item">
+                        <p><strong>Pickup Lead Times:</strong> With our new program, we've seen a decrease in lead time from booking to pickup from <span class="highlight">14 days to 2 days</span>, on average. This reflects an <span class="highlight">85% increase in speed</span> of pickup from the time of booking.</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <p><strong>Transit Times:</strong> In comparison to Mine's previous carrier network, Cake Freight's transit management has provided a <span class="highlight">50% decrease</span> in shipment days in transit.</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <p><strong>Partnership Success:</strong> We are grateful for your partnership and collaboration as we work together to improve the efficiencies of Mine's logistics program. We're honored to be a part of your team!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Time Allocation Analysis</div>
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <div class="chart-title">Time Saved by Activity</div>
+                        <svg viewBox="0 0 400 300" style="width: 100%; height: auto;">
+                            <!-- Donut Chart -->
+                            <g transform="translate(200, 140)">
+                                <!-- Quoting/Booking - 13.2 hours (15.3%) -->
+                                <path d="M 0,-90 A 90,90 0 0,1 32.5,-84.9" fill="none" stroke="#667eea" stroke-width="40"/>
+                                <!-- In-Transit Mgmt - 45.2 hours (52.3%) -->
+                                <path d="M 32.5,-84.9 A 90,90 0 1,1 -82.2,-38.3" fill="none" stroke="#764ba2" stroke-width="40"/>
+                                <!-- Invoicing/Rebill - 28.3 hours (32.7%) -->
+                                <path d="M -82.2,-38.3 A 90,90 0 0,1 0,-90" fill="none" stroke="#4facfe" stroke-width="40"/>
+                                
+                                <!-- Center hole -->
+                                <circle cx="0" cy="0" r="50" fill="white"/>
+                                
+                                <!-- Legend -->
+                                <g transform="translate(-180, 120)">
+                                    <rect x="0" y="0" width="15" height="15" fill="#667eea"/>
+                                    <text x="20" y="12" font-size="12" font-family="Segoe UI">Quoting/Booking (15.3%)</text>
+                                </g>
+                                <g transform="translate(-180, 140)">
+                                    <rect x="0" y="0" width="15" height="15" fill="#764ba2"/>
+                                    <text x="20" y="12" font-size="12" font-family="Segoe UI">In-Transit Mgmt (52.3%)</text>
+                                </g>
+                                <g transform="translate(-180, 160)">
+                                    <rect x="0" y="0" width="15" height="15" fill="#4facfe"/>
+                                    <text x="20" y="12" font-size="12" font-family="Segoe UI">Invoicing/Rebill (32.7%)</text>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-title">Touches by Process Area</div>
+                        <svg viewBox="0 0 400 300" style="width: 100%; height: auto;">
+                            <!-- Bar Chart -->
+                            <g transform="translate(50, 20)">
+                                <!-- Y-axis -->
+                                <line x1="0" y1="0" x2="0" y2="220" stroke="#ccc" stroke-width="1"/>
+                                <!-- X-axis -->
+                                <line x1="0" y1="220" x2="320" y2="220" stroke="#ccc" stroke-width="1"/>
+                                
+                                <!-- Y-axis labels -->
+                                <text x="-10" y="225" text-anchor="end" font-size="11">0</text>
+                                <text x="-10" y="165" text-anchor="end" font-size="11">400</text>
+                                <text x="-10" y="110" text-anchor="end" font-size="11">800</text>
+                                <text x="-10" y="55" text-anchor="end" font-size="11">1200</text>
+                                <text x="-10" y="5" text-anchor="end" font-size="11">1400</text>
+                                
+                                <!-- Bars -->
+                                <!-- Quoting/Booking: 113 -->
+                                <rect x="20" y="202" width="60" height="18" fill="#f093fb" opacity="0.8"/>
+                                <text x="50" y="240" text-anchor="middle" font-size="11">Quoting/</text>
+                                <text x="50" y="252" text-anchor="middle" font-size="11">Booking</text>
+                                <text x="50" y="195" text-anchor="middle" font-size="12" font-weight="bold">113</text>
+                                
+                                <!-- In-Transit Mgmt: 1356 -->
+                                <rect x="120" y="5" width="60" height="215" fill="#f5576c" opacity="0.8"/>
+                                <text x="150" y="240" text-anchor="middle" font-size="11">In-Transit</text>
+                                <text x="150" y="252" text-anchor="middle" font-size="11">Mgmt</text>
+                                <text x="150" y="235" text-anchor="middle" font-size="12" font-weight="bold" fill="white">1356</text>
+                                
+                                <!-- Invoicing/Rebill: 339 -->
+                                <rect x="220" y="167" width="60" height="53" fill="#4facfe" opacity="0.8"/>
+                                <text x="250" y="240" text-anchor="middle" font-size="11">Invoicing/</text>
+                                <text x="250" y="252" text-anchor="middle" font-size="11">Rebill</text>
+                                <text x="250" y="160" text-anchor="middle" font-size="12" font-weight="bold">339</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Process Efficiency Metrics</div>
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <div class="chart-title">Hours Saved by Process</div>
+                        <svg viewBox="0 0 400 300" style="width: 100%; height: auto;">
+                            <!-- Bar Chart -->
+                            <g transform="translate(50, 20)">
+                                <!-- Y-axis -->
+                                <line x1="0" y1="0" x2="0" y2="220" stroke="#ccc" stroke-width="1"/>
+                                <!-- X-axis -->
+                                <line x1="0" y1="220" x2="320" y2="220" stroke="#ccc" stroke-width="1"/>
+                                
+                                <!-- Y-axis labels -->
+                                <text x="-10" y="225" text-anchor="end" font-size="11">0</text>
+                                <text x="-10" y="170" text-anchor="end" font-size="11">15</text>
+                                <text x="-10" y="115" text-anchor="end" font-size="11">30</text>
+                                <text x="-10" y="60" text-anchor="end" font-size="11">45</text>
+                                
+                                <!-- Bars -->
+                                <!-- Quoting/Booking: 13.2 hours -->
+                                <rect x="20" y="155" width="60" height="65" fill="#11998e" opacity="0.8"/>
+                                <text x="50" y="240" text-anchor="middle" font-size="11">Quoting/</text>
+                                <text x="50" y="252" text-anchor="middle" font-size="11">Booking</text>
+                                <text x="50" y="145" text-anchor="middle" font-size="12" font-weight="bold">13.2</text>
+                                
+                                <!-- In-Transit Mgmt: 45.2 hours -->
+                                <rect x="120" y="5" width="60" height="215" fill="#11998e" opacity="0.8"/>
+                                <text x="150" y="240" text-anchor="middle" font-size="11">In-Transit</text>
+                                <text x="150" y="252" text-anchor="middle" font-size="11">Mgmt</text>
+                                <text x="150" y="235" text-anchor="middle" font-size="12" font-weight="bold" fill="white">45.2</text>
+                                
+                                <!-- Invoicing/Rebill: 28.3 hours -->
+                                <rect x="220" y="80" width="60" height="140" fill="#11998e" opacity="0.8"/>
+                                <text x="250" y="240" text-anchor="middle" font-size="11">Invoicing/</text>
+                                <text x="250" y="252" text-anchor="middle" font-size="11">Rebill</text>
+                                <text x="250" y="70" text-anchor="middle" font-size="12" font-weight="bold">28.3</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-title">Average Time per Touch</div>
+                        <svg viewBox="0 0 400 300" style="width: 100%; height: auto;">
+                            <!-- Horizontal Bar Chart -->
+                            <g transform="translate(150, 40)">
+                                <!-- X-axis -->
+                                <line x1="0" y1="200" x2="220" y2="200" stroke="#ccc" stroke-width="1"/>
+                                
+                                <!-- X-axis labels -->
+                                <text x="0" y="215" text-anchor="middle" font-size="11">0</text>
+                                <text x="55" y="215" text-anchor="middle" font-size="11">2</text>
+                                <text x="110" y="215" text-anchor="middle" font-size="11">4</text>
+                                <text x="165" y="215" text-anchor="middle" font-size="11">6</text>
+                                <text x="220" y="215" text-anchor="middle" font-size="11">8 min</text>
+                                
+                                <!-- Bars -->
+                                <!-- Quoting/Booking: 7 min -->
+                                <rect x="0" y="20" width="193" height="40" fill="#667eea" opacity="0.8"/>
+                                <text x="-10" y="45" text-anchor="end" font-size="11">Quoting/Booking</text>
+                                <text x="200" y="45" font-size="12" font-weight="bold">7 min</text>
+                                
+                                <!-- In-Transit Mgmt: 2 min -->
+                                <rect x="0" y="80" width="55" height="40" fill="#764ba2" opacity="0.8"/>
+                                <text x="-10" y="105" text-anchor="end" font-size="11">In-Transit Mgmt</text>
+                                <text x="62" y="105" font-size="12" font-weight="bold">2 min</text>
+                                
+                                <!-- Invoicing/Rebill: 5 min -->
+                                <rect x="0" y="140" width="138" height="40" fill="#4facfe" opacity="0.8"/>
+                                <text x="-10" y="165" text-anchor="end" font-size="11">Invoicing/Rebill</text>
+                                <text x="145" y="165" font-size="12" font-weight="bold">5 min</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Detailed Time Allocation Savings</div>
+                <div class="time-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Process Area</th>
+                                <th>Volume/Touches</th>
+                                <th>Minutes</th>
+                                <th>Hours</th>
+                                <th>Avg Min/Touch</th>
+                                <th>Avg Hours/Touch</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Quoting / Booking</strong></td>
+                                <td style="text-align: center;">113</td>
+                                <td style="text-align: center;">791</td>
+                                <td style="text-align: center;">13.2</td>
+                                <td style="text-align: center;">7.0</td>
+                                <td style="text-align: center;">-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>In-Transit Management</strong></td>
+                                <td style="text-align: center;">1,356</td>
+                                <td style="text-align: center;">162,672</td>
+                                <td style="text-align: center;">2,711.2</td>
+                                <td style="text-align: center;">2,712.0</td>
+                                <td style="text-align: center;">45.2</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Invoicing / Rebill Reconciliation</strong></td>
+                                <td style="text-align: center;">339</td>
+                                <td style="text-align: center;">574,605</td>
+                                <td style="text-align: center;">9,576.8</td>
+                                <td style="text-align: center;">1,695.0</td>
+                                <td style="text-align: center;">28.3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; color: #7f8c8d; font-size: 12px; margin-top: 40px;">
+                <p><strong>Time Allocation Average Metrics:</strong></p>
+                <p>Quoting / Booking: 7 min / Shipment | In-Transit Management: 12 Touches per shipment / 2 min per touch | Invoicing / Rebill Reconciliation: 3 touches per shipment / 5 min per touch</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
